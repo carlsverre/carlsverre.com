@@ -7,6 +7,7 @@ import "./styles.css";
 
 var canvas = document.getElementById("canvas");
 var infoModal = document.getElementById("info");
+var infoCloseBtn = document.getElementById("info-close-btn");
 
 // the width & height of each grid cell
 var gridSize = 100;
@@ -27,6 +28,7 @@ var colors = [
 function setup() {
     window.addEventListener("resize", resize, false);
     window.addEventListener("mouseup", toggleInfo, false);
+    infoCloseBtn.addEventListener("click", closeInfo, false);
 
     // make sure that links don't trigger the toggleInfo handler
     var links = document.getElementsByTagName("a");
@@ -39,6 +41,7 @@ function setup() {
     resize();
 }
 
+function closeInfo() { infoModal.className = "hidden"; }
 function toggleInfo(evt) {
     if (infoModal.className === "hidden") {
         infoModal.className = "";
@@ -83,8 +86,8 @@ class Point {
     }
 
     offset() {
-        this.x += randomDist(1, maxPointOffsetPx);
-        this.y += randomDist(1, maxPointOffsetPx);
+        this.x += randomDist(2, maxPointOffsetPx);
+        this.y += randomDist(2, maxPointOffsetPx);
     }
 }
 
