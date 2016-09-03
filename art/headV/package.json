@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --inline",
+    "dev": "webpack-dev-server --inline --host 0.0.0.0 --compress",
     "build": "webpack"
   },
   "author": "",

@@ -50,7 +50,7 @@ function draw() {
 
     for (var i = 0; i < bars.length; ++i) {
         var bar = bars[i];
-        bar.scale.y = waveform[i] / 128.0;
+        bar.scale.y = (fft[i] / 128.0) * (waveform[i] / 128);
     }
 
     renderer.render(scene, camera);
