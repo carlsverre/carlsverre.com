@@ -5,7 +5,7 @@ export default class Audio {
         this.ctx = new (window.AudioContext || window.webkitAudioContext)();
         this.source = this.ctx.createMediaElementSource(this.el);
         this.analyser = this.ctx.createAnalyser();
-        this.analyser.fftSize = 32;
+        this.analyser.fftSize = 128;
 
         // connect audio graph
         this.source.connect(this.analyser);
