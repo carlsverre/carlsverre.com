@@ -12,5 +12,10 @@ echo "Updating colorful hexagons"
 ssh ralph "mkdir -p static/www-carlsverre-com/art/hexagon_colors"
 scp -r art/hexagon_colors/{index.html,assets} ralph:static/www-carlsverre-com/art/hexagon_colors
 
+echo "Updating worldspin"
+( cd art/worldspin && npm run build )
+ssh ralph "mkdir -p static/www-carlsverre-com/art/worldspin"
+scp -r art/worldspin/build/* ralph:static/www-carlsverre-com/art/worldspin
+
 echo "Updating main assets"
 scp -r index.html assets ralph:static/www-carlsverre-com
