@@ -143,9 +143,9 @@ function render() {
     var fft = audio.fft();
     var sum = 0;
     for(var i = 0; i < fft.length; i++) {
-        if (i < fft.length / 2) { sum += fft[i]; }
+        if (i < fft.length / 3) { sum += fft[i]; }
     }
-    var sensitivity = 4;
+    var sensitivity = 3;
     var level = (((sum / fft.length / 2) / 256) * sensitivity);
 
     if (frameI % 1 === 0) {
@@ -212,7 +212,7 @@ function render() {
     particleField.rotation.y += 0.00003;
     particleField.rotation.z += 0.00002;
 
+    controls.update();
     renderer.render(scene, camera);
 }
 render();
-
