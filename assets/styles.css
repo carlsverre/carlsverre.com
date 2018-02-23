@@ -1,10 +1,10 @@
 * {
-    text-rendering: optimizeLegibility!important;
-    -webkit-font-smoothing: antialiased!important;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
 }
 
 body {
-    font-family: Consolas, monaco, monospace;
+    font-family: "Roboto Mono", monospace;
     font-size: 13px;
     line-height: 20px;
 
@@ -12,18 +12,51 @@ body {
     margin: 40px;
 }
 
-h1 { font-size: 1.5em; }
-h2 { font-size: 1.1em; }
+h1 {
+    font-size: 1.5em;
+}
+h2 {
+    font-size: 1.1em;
+}
 
-p { margin: 1em 0; padding: 0; }
+p {
+    margin: 1em 0;
+    padding: 0;
+}
 
-a { color: #0B348C; text-decoration: none; }
-a:hover { color: #0B34CC; text-decoration: none; }
+a {
+    color: #0b348c;
+    text-decoration: none;
+}
 
-ul { list-style-type: none; padding: 0; margin: 0;}
+a:hover {
+    color: #0b34cc;
+    text-decoration: none;
+}
 
-.vcard { margin-bottom: 2em; }
-.vcard .contact { text-align: right; font-size: .9em; line-height: 1.5em; float: right; }
-.clearfix { clear: both; }
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
-.summary { margin-bottom: 2em; clear: both; text-align: justify; }
+.vcard {
+    margin-bottom: 2em;
+}
+
+.vcard .contact {
+    text-align: right;
+    font-size: 0.9em;
+    line-height: 1.5em;
+    float: right;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.summary {
+    margin-bottom: 2em;
+    clear: both;
+    text-align: justify;
+}
