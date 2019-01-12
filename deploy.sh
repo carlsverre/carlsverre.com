@@ -3,7 +3,10 @@
 set -e
 
 REMOTE=proto
-ROOT=/srv/www-carlsverre-com
+ROOT=/srv/com/carlsverre/www
+
+echo "Updating main assets"
+scp -r index.html assets ${REMOTE}:${ROOT}
 
 echo "Updating wall drawing 91"
 ( cd art/wall_drawing_91 && npm run build )
@@ -19,6 +22,3 @@ echo "Updating worldspin"
 ( cd art/worldspin && npm run build )
 ssh ${REMOTE} "mkdir -p ${ROOT}/art/worldspin"
 scp -r art/worldspin/build/* ${REMOTE}:${ROOT}/art/worldspin
-
-echo "Updating main assets"
-scp -r index.html assets ${REMOTE}:${ROOT}
