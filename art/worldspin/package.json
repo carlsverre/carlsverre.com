@@ -9,7 +9,8 @@
   "dependencies": {
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
-    "three": "^0.82.1"
+    "three": "^0.82.1",
+    "vercel": "^24.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
