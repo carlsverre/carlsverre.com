@@ -14,10 +14,9 @@ const { title, description } = Astro.props;
   <head>
     <BaseHead title={title || SITE_TITLE} description={description || SITE_DESCRIPTION} />
   </head>
-
   <body>
     <main>
-      <article><slot /></article>
+      <slot />
     </main>
   </body>
 </html>
