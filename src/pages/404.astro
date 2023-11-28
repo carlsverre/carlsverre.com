@@ -1,0 +1,21 @@
+---
+import Global from "@layouts/Global.astro";
+import Link from "@components/Link.astro";
+import { Icon } from "astro-icon";
+---
+
+<Global title="404: Not Found">
+  <p>
+    <code>404: Not Found</code>
+  </p>
+  <Link href="/" class="home-link">
+    <Icon name="mdi:home" /> go home
+  </Link>
+</Global>
+
+<style>
+  [astro-icon] {
+    vertical-align: top;
+    width: calc(var(--font-size-base) * 1.2);
+  }
+</style>
