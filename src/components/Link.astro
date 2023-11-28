@@ -10,7 +10,6 @@ const { href, label, ...props } = Astro.props;
 
 const isRemote = href.startsWith("http");
 const target = isRemote ? "_blank" : "_self";
-const prefetch = isRemote ? undefined : "prefetch-intent";
 ---
 
-<a href={href} target={target} aria-label={label} rel={prefetch} {...props}><slot /></a>
+<a href={href} target={target} aria-label={label} data-astro-prefetch {...props}><slot /></a>

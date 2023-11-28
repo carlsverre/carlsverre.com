@@ -7,4 +7,5 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://carlsverre.com",
   integrations: [mdx(), sitemap()],
+  prefetch: true,
 });
