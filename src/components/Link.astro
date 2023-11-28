@@ -1,0 +1,15 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"a"> & {
+  href: string;
+  label?: string;
+};
+
+const { href, label, ...props } = Astro.props;
+
+const isRemote = href.startsWith("http");
+const target = isRemote ? "_blank" : "_self";
+---
+
+<a href={href} target={target} aria-label={label} data-astro-prefetch {...props}><slot /></a>

@@ -1,0 +1,9 @@
+{
+  "origins": [
+    "https://carlsverre.com"
+  ],
+  "originsRegex": [
+    "https://([A-z0-9]|-)*.carlsverre-com.pages.dev",
+    "http://localhost:[0-9]+"
+  ]
+}
