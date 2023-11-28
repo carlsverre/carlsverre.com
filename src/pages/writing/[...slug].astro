@@ -1,6 +1,9 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import Global from "@layouts/Global.astro";
+import { Icon } from "astro-icon";
+import PrettyDate from "@components/PrettyDate.astro";
+import Link from "@components/Link.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -13,8 +16,81 @@ type Props = CollectionEntry<"posts">;
 
 const post = Astro.props;
 const { Content } = await post.render();
+
+const components = {
+  a: Link,
+};
 ---
 
 <Global title={post.data.title} description={post.data.description}>
-  <Content />
+  <Link href="/" class="home-link">
+    <Icon name="mdi:arrow-up-left" /> back
+  </Link>
+
+  <h1>{post.data.title}</h1>
+
+  <section class="postmeta">
+    <div class="byline">
+      <span class="author">Carl Sverre</span>
+      <PrettyDate date={post.data.pubDate} />
+    </div>
+  </section>
+
+  <Content components={components} />
 </Global>
+
+<style>
+  .home-link {
+    position: absolute;
+    top: -1lh;
+    display: inline-block;
+
+    font-family: var(--font-code);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-body);
+
+    [astro-icon] {
+      vertical-align: top;
+      width: calc(var(--font-size-base) * 1.2);
+    }
+  }
+
+  .postmeta {
+    position: relative;
+    color: var(--color-text-supporting);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-body);
+    text-align: center;
+    margin-bottom: calc(var(--base-spacing) * 4);
+  }
+
+  @media (max-width: 960px) {
+    .postmeta {
+      margin-bottom: calc(var(--base-spacing) * 2);
+    }
+  }
+
+  .postmeta::after {
+    /* horizontal line in middle */
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: var(--color-text-supporting);
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+  }
+
+  .byline {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 0 var(--base-spacing);
+    background-color: var(--color-background);
+
+    > * {
+      margin: 0 calc(var(--base-spacing) / 2);
+    }
+  }
+</style>

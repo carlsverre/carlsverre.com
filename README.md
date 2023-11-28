@@ -1,11 +1,11 @@
 # Carl Sverre
 
-https://carlsverre.com
-
 Hello! Welcome to my corner of the internet. The intention of this site is to provide a place to
-publish content that's not locked into the various social networks. Feel free to start GitHub
-discussions to leave comments, or just share a post on your favorite social network and comment
-there. My handles include:
+publish content that's not locked into the various social networks. Feel free to start [GitHub
+discussions][comments] to leave comments, or just share a post on your favorite social network and
+comment there. My handles include:
+
+[comments]: https://github.com/carlsverre/carlsverre.com/discussions
 
 | platform   | handle                 |
 | ---------- | ---------------------- |

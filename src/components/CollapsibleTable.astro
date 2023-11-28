@@ -1,0 +1,181 @@
+---
+import { Icon } from "astro-icon";
+import Link from "@components/Link.astro";
+import { v4 as uuidv4 } from "uuid";
+
+interface Column {
+  name: string;
+  type: "string" | "number" | "link";
+}
+
+interface Props {
+  caption: string;
+  columns: Column[];
+  rows: string[][];
+  class?: string;
+}
+const { caption, columns, rows, class: className, ...rest } = Astro.props;
+const style = { "--num-cols": columns.length };
+const id = uuidv4();
+---
+
+<div class:list={[className, "table"]} style={style} {...rest}>
+  <div class="table-caption">{caption}</div>
+  <input type="checkbox" id={id} hidden />
+  <div class="table-wrap">
+    <div class="table-inner">
+      {
+        columns.map(({ name, type }, i) => {
+          const style = { "--col": i + 1 };
+          return (
+            <div class:list={["cell", "col", type]} style={style}>
+              {name}
+            </div>
+          );
+        })
+      }
+      {
+        rows.map((row) =>
+          row.map((cell, i) => {
+            const { type, name } = columns[i];
+            const style = { "--col": i + 1 };
+            let inner = cell;
+            if (type === "link") {
+              inner = (
+                <Link href={cell} label={name}>
+                  <Icon name="mdi:external-link" />
+                </Link>
+              );
+            }
+            return (
+              <div class:list={["cell", type]} style={style}>
+                {inner}
+              </div>
+            );
+          })
+        )
+      }
+    </div>
+  </div>
+  <div class="table-cover">
+    <label for={id} aria-label="toggle table visibility">
+      <Icon class="down" name="mdi:chevron-up" />
+      <Icon class="up" name="mdi:chevron-down" />
+    </label>
+  </div>
+</div>
+
+<style>
+  .table {
+    font-family: var(--font-code);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-body);
+    background-color: var(--color-background-light);
+    padding: var(--base-spacing);
+    margin: calc(var(--base-spacing) * 2) 0;
+  }
+
+  .table-caption {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: var(--base-spacing);
+    text-align: center;
+  }
+
+  .table-inner {
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), auto);
+    gap: calc(var(--base-spacing) / 2) var(--base-spacing);
+    overflow: hidden;
+    min-height: calc(var(--base-spacing) * 10);
+  }
+
+  .table-cover {
+    width: calc(100% + var(--base-spacing) * 2);
+    position: relative;
+    left: calc(var(--base-spacing) * -1);
+    top: var(--base-spacing);
+    height: 2em;
+
+    > label {
+      text-align: center;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      height: 2em;
+
+      > svg {
+        width: 2em;
+        height: 2em;
+      }
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  .table-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease-out;
+  }
+
+  /* when input is not checked, slide up the cover */
+  input:not(:checked) {
+    ~ .table-cover {
+      /* transparent gradient fade above element */
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        height: calc(var(--base-spacing) * 5);
+        background: linear-gradient(to top, var(--color-background-light), rgba(255, 255, 255, 0));
+      }
+
+      > label .down {
+        display: none;
+      }
+    }
+  }
+
+  /* when input is checked, slide down the cover */
+  input:checked {
+    ~ .table-wrap {
+      grid-template-rows: 1fr;
+    }
+
+    ~ .table-cover {
+      > label .up {
+        display: none;
+      }
+    }
+  }
+
+  .col {
+    text-align: center;
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-body);
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--color-text-tertiary);
+  }
+
+  .cell {
+    grid-column: var(--col);
+    padding: 0 calc(var(--base-spacing) / 2);
+
+    &.number,
+    &.link {
+      text-align: center;
+    }
+
+    & svg {
+      width: 1em;
+      height: 1em;
+      vertical-align: middle;
+    }
+  }
+</style>

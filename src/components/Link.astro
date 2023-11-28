@@ -1,24 +1,16 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { HTMLAttributes } from "astro/types";
 
-type Props = HTMLAttributes<'a'>;
+type Props = HTMLAttributes<"a"> & {
+  href: string;
+  label?: string;
+};
 
-const { href, class: className, ...props } = Astro.props;
+const { href, label, ...props } = Astro.props;
 
-const { pathname } = Astro.url;
-const isActive = href === pathname || href === pathname.replace(/\/$/, '');
+const isRemote = href.startsWith("http");
+const target = isRemote ? "_blank" : "_self";
+const prefetch = isRemote ? undefined : "prefetch-intent";
 ---
 
-<a href={href} class:list={[className, { active: isActive }]} {...props}>
-	<slot />
-</a>
-<style>
-	a {
-		display: inline-block;
-		text-decoration: none;
-	}
-	a.active {
-		font-weight: bolder;
-		text-decoration: underline;
-	}
-</style>
+<a href={href} target={target} aria-label={label} rel={prefetch} {...props}><slot /></a>
