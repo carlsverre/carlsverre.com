@@ -40,6 +40,11 @@ const components = {
 </Global>
 
 <style>
+  h1 {
+    margin-top: 0;
+    margin-bottom: calc(var(--base-spacing) / 2);
+  }
+
   .home-link {
     position: absolute;
     top: -1lh;
@@ -61,13 +66,7 @@ const components = {
     font-size: var(--font-size-sm);
     line-height: var(--line-height-body);
     text-align: center;
-    margin-bottom: calc(var(--base-spacing) * 4);
-  }
-
-  @media (max-width: 960px) {
-    .postmeta {
-      margin-bottom: calc(var(--base-spacing) * 2);
-    }
+    margin-bottom: calc(var(--base-spacing) * 2);
   }
 
   .postmeta::after {

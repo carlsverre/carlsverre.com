@@ -25,7 +25,7 @@ Handmade Seattle is part of Handmade Cities, an organization run by Abner Coimbr
  - The demos and talks are impressive, and generally push limits
  - Participants are very curious and not afraid to crack open the source, or even disassemble things to learn how they work
 
-**The rest of this post will focus on particular projects I found interesting.**
+> The rest of this post will focus on particular projects I found interesting. Enjoy!
 
 ## Tilde
 
@@ -80,17 +80,18 @@ Finally, Odin has a native [matrix representation][odin-matrix] as well, which c
 
 ```cpp
 a := matrix[2, 3]f32{
-    2, 3, 1,
-    4, 5, 0,
+  2, 3, 1,
+  4, 5, 0,
 }
 
 b := matrix[3, 2]f32{
-    1, 2,
-    3, 4,
-    5, 6,
+  1, 2,
+  3, 4,
+  5, 6,
 }
 
-// Supports many native matrix ops such as multiplication
+// Supports many native matrix ops
+// such as multiplication
 c := a * b
 #assert(type_of(c) == matrix[2, 2]f32)
 fmt.tprintln("c = a * b", c)
@@ -163,6 +164,18 @@ This talk is a fantastic discussion of low-level versus high-level software, spe
 Loris closed the conference off with this fantastic talk on imposter syndrome. Imposter syndrome is a topic that comes up a ton in our industry, and I'm happy to see it show up and be discussed during conferences like Handmade Seattle. I especially like the section of the talk on Fight vs Flight people in communities. Watch this talk!
 
 [loris-talk]: https://vimeo.com/888147720/f0182acf4e
+
+### [Eon: An Amiga 500 Demo with Andreas Fredriksson][eon-talk]
+
+Whether or not you've seen Demoscene videos before, I guarantee you'll find this one impressive. The talk starts with a five minute demo that runs on native Amiga 500 hardware. Afterwards, Andreas goes into the process of creating this masterpiece of art and engineering that took him and his team four years to finish.
+
+If you're interested in learning more about the nitty-gritty details [check out the team's devlog][eon-blog].
+
+And if you're inclined to run Eon yourself, you can [get it from Pouet][eon-pouet].
+
+[eon-talk]: https://vimeo.com/887527796/c9132ed6bc
+[eon-blog]: https://tbl.nu/posts/
+[eon-pouet]: https://www.pouet.net/prod.php?which=81094
 
 ## That's all folks!
 

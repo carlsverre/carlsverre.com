@@ -53,6 +53,7 @@
   /* https://kittygiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/ */
   --line-height-heading: calc(2px + 2ex + 2px);
   --line-height-body: calc(4px + 2ex + 4px);
+  --line-height-code: calc(3px + 2ex + 3px);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -157,10 +158,11 @@ main {
   }
 }
 
+pre,
 code {
   font-family: var(--font-code);
   font-size: var(--font-size-sm);
-  line-height: var(--line-height-body);
+  line-height: var(--line-height-code);
 }
 
 pre {
@@ -201,14 +203,11 @@ img {
 }
 
 p,
-blockquote {
-  margin: var(--base-spacing) 0;
-}
-
 pre,
 ul,
 ol {
-  margin: calc(var(--base-spacing) * 2) 0;
+  margin-top: 0;
+  margin-bottom: calc(var(--base-spacing) * 2);
 }
 
 h1,
@@ -218,8 +217,8 @@ h4 {
   font-family: var(--font-heading);
   font-weight: 700;
   text-wrap: balance;
-  margin-top: calc(var(--base-spacing) * 2);
   margin-bottom: var(--base-spacing);
+  margin-top: 1.25lh;
 }
 
 h1 {
@@ -283,14 +282,14 @@ small {
 }
 
 blockquote {
-  margin: 0 0 var(--base-spacing) 0;
-  padding: calc(var(--base-spacing) / 2) var(--base-spacing);
+  margin: 0 0 calc(var(--base-spacing) * 2) 0;
+  padding: var(--base-spacing);
   border-radius: 5px;
   background-color: var(--color-background-light);
   border: 1px solid var(--color-background-medium);
 
   > p {
-    margin-bottom: var(--base-spacing);
+    margin: 0;
   }
 }
 
