@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://carlsverre.com/sitemap-index.xml
