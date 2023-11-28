@@ -54,7 +54,7 @@ Among Odin's [many features][odin-features], I'd like to highlight the Context s
 
 Odin's Context system is a [bag of mutable values][odin-context] that are implicitly passed around to every procedure. It seems that this is the recommended way to override the allocator and logger, as well as pass around user data. It seems to be an ok solution to allocator/logging management, as those are often implicit in most languages - however I'm not a huge fan of passing untyped user data implicitly via a pointer. Perhaps there is a way to constrain which types you can store in the `user_ptr` field or otherwise add safety to it at compile time.
 
-The Context system does enable a fantastic feature, which is custom allocators. When working on high-performance software, it's often very useful to leverage custom allocators. For example, you might want to use a slab allocator to simply memory management during a short section of code.
+The Context system does enable a fantastic feature, which is custom allocators. When working on high-performance software, it's often very useful to leverage custom allocators. For example, you might want to use a slab allocator to simplify memory management during a short section of code.
 
 Array programming is another interesting feature. Specifically, I'd like to call out Odin's native support for [Structure of Array (SoA)][odin-soa] and similar transformations. It's cool to see the language transparently convert logical and physical data representations, while also enabling easier vectorization.
 
@@ -97,7 +97,7 @@ c := a * b
 fmt.tprintln("c = a * b", c)
 ```
 
-Overall, I think I might look at Odin if I was doing some low-level graphics or game programming! Very cool!
+Overall, I think I might look at Odin if I were doing some low-level graphics or game programming! Very cool!
 
 [Odin]: https://odin-lang.org/
 [odin-influences]: https://odin-lang.org/docs/faq/#what-have-been-the-major-influences-in-the-languages-design
@@ -118,7 +118,7 @@ Ok so that was nuts right? Seeing every value of every local variable over time 
 
 So why isn't Whitebox everywhere? Well, at least one of the reasons is that they have to build a kind of custom compiler for each language they support. For now, only C and C++ is supported, with more languages in the pipeline.
 
-As for myself, I'm ready to buy as soon as they have Rust support! Exciting to see innovation happening in the debugger space!
+Personally, I'm ready to buy as soon as they have Rust support! Exciting to see innovation happening in the debugger space!
 
 [Whitebox]: https://whitebox.systems/
 [whitebox-talk]: https://vimeo.com/887510192/7488c1c6a0
