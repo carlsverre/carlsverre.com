@@ -1,9 +1,8 @@
 # Carl Sverre
 
 Hello! Welcome to my corner of the internet. The intention of this site is to provide a place to
-publish content that's not locked into the various social networks. Feel free to start [GitHub
-discussions][comments] to leave comments, or just share a post on your favorite social network and
-comment there. My handles include:
+publish content that's not locked into the various social networks and sometimes long-form. That
+said, sharing is encouraged! Just consider tagging one of my handles if you do:
 
 [comments]: https://github.com/carlsverre/carlsverre.com/discussions
 
