@@ -4,13 +4,9 @@ description: "A review of Handmade Seattle 2023"
 pubDate: 2023-11-24
 ---
 
-import { Image } from "astro:assets";
-import SpallExample from "@assets/spall-example.gif";
-import SQLWorkings from "@assets/sql-inner-workings.png"
-
 Last week I attended Handmade Seattle 2023. If you haven't heard about this conference or the Handmade movement, it's a community of low-level programmers with a passion for understanding how things work and doing things from scratch. It was originally inspired by [Handmade Hero], in which Casey Muratori creates a video game starting from a [WinMain entry point][hh-start].
 
-Handmade Seattle is part of Handmade Cities, an organization run by Abner Coimbre. I met Abner earlier this year at [Software You Can Love][sycl] in Vancouver, another conference focused on systems programming and the craft of high quality software. Abner also runs the [Handmade Network] which seems to be the primary way to engage with the Handmade community.
+Handmade Seattle is part of [Handmade Cities], an organization run by Abner Coimbre. I met Abner earlier this year at [Software You Can Love][sycl] in Vancouver, another conference focused on systems programming and the craft of high quality software. Abner also runs the [Handmade Network] which seems to be the primary way to engage with the Handmade community.
 
 [Handmade Cities]: https://handmadecities.com
 [Handmade Network]: https://handmade.network/
@@ -20,10 +16,10 @@ Handmade Seattle is part of Handmade Cities, an organization run by Abner Coimbr
 
 ## TLDR
 
- - I plan to attend future Handmade events
- - It's a great place to meet system programmers
- - The demos and talks are impressive, and generally push limits
- - Participants are very curious and not afraid to crack open the source, or even disassemble things to learn how they work
+- I plan to attend future Handmade events
+- It's a great place to meet system programmers
+- The demos and talks are impressive, and generally push limits
+- Participants are very curious and not afraid to crack open the source, or even disassemble things to learn how they work
 
 > The rest of this post will focus on particular projects I found interesting. Enjoy!
 
@@ -125,7 +121,7 @@ Personally, I'm ready to buy as soon as they have Rust support! Exciting to see 
 
 ## Spall
 
-<Image src={SpallExample} alt="A demo of using Spall to profile an application" />
+![A demo of using Spall to profile an application](../../assets/handmade-seattle-2023/spall-example.gif)
 
 Flame Graphs are awesome, and I have used them often throughout my career. Whether it was profiling query execution performance at SingleStore or debugging why my React app isn't hitting 60 FPS, Flame Graphs have been a lifesaver.
 
@@ -145,7 +141,7 @@ In addition to the projects highlighted above, here are some other talks that I 
 
 In this talk, Nikita covers the key differences between OLTP and OLAP optimized storage systems in databases. In addition to an excellent overview of the topic, he also included this amazing comparison:
 
-<Image src={SQLWorkings} alt="an image comparing OLTP to the Millennium Falcon and OLAP to Spacing Guild Heighliners" />
+![an image comparing OLTP to the Millennium Falcon and OLAP to Spacing Guild Heighliners](../../assets/handmade-seattle-2023/sql-inner-workings.png)
 
 [sql-iw]: https://vimeo.com/888147574/414952f8d8
 
@@ -167,7 +163,7 @@ Loris closed the conference off with this fantastic talk on imposter syndrome. I
 
 ### [Eon: An Amiga 500 Demo with Andreas Fredriksson][eon-talk]
 
-Whether or not you've seen Demoscene videos before, I guarantee you'll find this one impressive. The talk starts with a five minute demo that runs on native Amiga 500 hardware. Afterwards, Andreas goes into the process of creating this masterpiece of art and engineering that took him and his team four years to finish.
+Whether you've seen demoscene videos before, I guarantee you'll find this one impressive. The talk starts with a five-minute demo that runs on native Amiga 500 hardware. Afterwards, Andreas goes into the process of creating this masterpiece of art and engineering that took him and his team four years to finish.
 
 If you're interested in learning more about the nitty-gritty details [check out the team's devlog][eon-blog].
 
@@ -183,6 +179,4 @@ I'm forcing myself to just release this rather than sitting on it forever. Hopef
 
 Thanks for reading!
 
-~/carl
-
-[start a discussion]: https://github.com/carlsverre/carlsverre.com/discussions
+~/Carl

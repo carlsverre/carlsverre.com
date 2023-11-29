@@ -4,6 +4,7 @@ import Global from "@layouts/Global.astro";
 import { Icon } from "astro-icon";
 import PrettyDate from "@components/PrettyDate.astro";
 import Link from "@components/Link.astro";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
