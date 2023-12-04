@@ -15,10 +15,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="canonical" href={canonical} />
-
 <meta name="generator" content={Astro.generator} />
 
-<!-- Font preloads -->
+<!-- preloads -->
 <link
   rel="preload"
   href="/fonts/merriweather-black.woff2"
@@ -45,6 +44,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 
-<script async src="https://cdn.usefathom.com/script.js" data-site="SCLETLHI"></script>
-
 <link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml" />
+
+<script async src="https://cdn.usefathom.com/script.js" data-site="SCLETLHI"></script>
