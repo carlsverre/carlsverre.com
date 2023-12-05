@@ -1,5 +1,8 @@
 {
   "markdown.copyFiles.destination": {
     "**/*": "${documentWorkspaceFolder}/src/assets/${documentBaseName}/"
-  }
+  },
+  "markdown.validate.ignoredLinks": [
+    "./handmade-seattle-2023"
+  ]
 }
