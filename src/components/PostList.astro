@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Link from "@components/Link.astro";
+import PrettyDate from "@components/PrettyDate.astro";
 
 interface Props {
   class?: string;
@@ -14,9 +15,9 @@ posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 
 <ul class={className} {...rest}>
   {
-    posts.map(({ data: { title }, slug }) => (
+    posts.map(({ data: { title, pubDate }, slug }) => (
       <li>
-        <Link href={`/writing/${slug}`}>{title}</Link>
+        <PrettyDate date={pubDate} />: <Link href={`/writing/${slug}`}>{title}</Link>
       </li>
     ))
   }
