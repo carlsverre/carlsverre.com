@@ -4,5 +4,8 @@
   },
   "markdown.validate.ignoredLinks": [
     "./handmade-seattle-2023"
-  ]
+  ],
+  "files.associations": {
+    "*.mdx": "markdown"
+  }
 }

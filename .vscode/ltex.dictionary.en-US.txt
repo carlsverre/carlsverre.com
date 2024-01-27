@@ -31,3 +31,6 @@ demoscene
 Pouet
 Strangeloop
 Munroe
+bursty
+Polybar
+gh-pages

@@ -1,0 +1,1 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QCombining this output with a jq pipeline and some bash magic leads to this ~beautiful~scrappy gem of code:\\E$"}
